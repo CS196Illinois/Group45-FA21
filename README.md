@@ -1,7 +1,7 @@
 # Group 45
 Group Name: TEAM_NAME
 
-[MVP Link](http://cs196.cs.illinois.edu)
+[MVP Link](https://docs.google.com/document/d/1e_yWQLrd8W6waS-R71QX9kZ5-ks18lrWPlCjAYAbBB0/edit?usp=sharing)
 
 Team Members: kaur18, aserr3, rzieg3, jioyoon2, tessaw2
 
