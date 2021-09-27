@@ -1,0 +1,2 @@
+flask notes: https://docs.google.com/document/d/1Vzoc3bZV_XoaYnlKT-wylVvuqwVbwtLZC_SGt-cTP2E/edit?usp=sharing
+flask test project: https://github.com/taylorziegler/myproject
