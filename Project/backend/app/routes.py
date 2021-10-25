@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, flash, redirect, url_for
 from app import app, db
 from flask_login import current_user, login_user
 from app.models import User
@@ -9,6 +9,12 @@ from app.forms import LoginForm, RegistrationForm
 @app.route('/index')
 def index():
     return "hi"
+@app.route('/verify')
+def verify():
+    user = current_user
+    if not (current_user.is_authenticated):
+        return "no user is logged in"
+    return "username: " + current_user.username + "\n email: " + current_user.email
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -27,7 +33,7 @@ def logout():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data, email="email@gmail.com")
+        user = User(username=form.username.data, email=form.email.data)
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
