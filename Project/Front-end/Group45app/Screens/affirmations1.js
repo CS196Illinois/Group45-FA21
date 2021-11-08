@@ -1,9 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button } from 'react-native-elements';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react';
 
-export default function App() {
+export default function affirmations1() {
   return (
     <View style={styles.container}>
       <Text style ={styles.textmain}>Welcome to </Text>
@@ -32,22 +31,22 @@ export default function App() {
 
       
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textmain: {
-    fontSize: 20,
-    textAlign: 'center',
-    fontStyle: 'Comfortaa',
-  },
-  subtext: {
-    fontSize: 20,
-    textAlign: 'center',
-    fontStyle: 'Comfortaa',
-    color: '#94F385',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#ffffff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+//   textmain: {
+//     fontSize: 20,
+//     textAlign: 'center',
+//     fontStyle: 'Comfortaa',
+//   },
+//   subtext: {
+//     fontSize: 20,
+//     textAlign: 'center',
+//     fontStyle: 'Comfortaa',
+//     color: '#94F385',
+//   },
+// });
