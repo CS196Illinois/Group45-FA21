@@ -8,4 +8,3 @@ response = requests.get(url)
 
 def print_affirmation():
     print(response.json())
-

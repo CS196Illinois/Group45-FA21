@@ -1,3 +1,4 @@
+from app import db
 from random import *
 class Journal():
     entries = []
@@ -10,3 +11,5 @@ class Journal():
         entry = User(user_id=user.get_id(), prompt=prompt, body=body)
         db.session.add(entry)
         db.session.commit()
+
+
