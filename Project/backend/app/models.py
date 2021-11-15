@@ -28,6 +28,7 @@ def load_user(id):
 
 class Entry(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(80), nullable=False)
     date = db.Column(db.DateTime, index=True, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     body = db.Column(db.String(140))
@@ -40,3 +41,5 @@ class Entry(db.Model):
         <b>{}</b>
         <p>{}</p>
         """.format(self.date, self.body)
+
+
