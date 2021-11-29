@@ -5,7 +5,7 @@ import { Button } from 'react-native-elements'
 import { StyleSheet, Text, View } from 'react-native';
 
 
-const Flex = () => {
+const affirmations1 = () => {
   return(
     <View style={[styles.container, {
       flexDirection: "column"
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
    title1: {
     color: "#20232a",
     textAlign: "left",
-    paddingTop: 50,
+    paddingTop: 45,
     paddingLeft: 20,
     fontSize: 40,
     fontWeight: "bold"
@@ -67,4 +67,4 @@ const styles = StyleSheet.create({
   }
  });
 
- export default Flex;
+ export default affirmations1;
