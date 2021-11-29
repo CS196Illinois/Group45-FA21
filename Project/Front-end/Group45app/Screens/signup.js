@@ -14,9 +14,8 @@ export default function signup() {
   const [password, setPassword] = useState("");
  
   return (
-    // <View style={styles.container}>
-    //   <Text style ={styles.textmain} Breeze Login <Text/>
-    // </View>
+    <View style={styles.container}>
+      <Image style={styles.image} source={require("./assets/logo.png")} />
 
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -44,6 +43,7 @@ export default function signup() {
         <Text style={styles.signupText}>Sign Up</Text>
       </TouchableOpacity>
     </View>
+    </View>
   );
 }
  
@@ -54,7 +54,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
- 
+
+  image: {
+    marginBottom: 40,
+  },
+  
   inputView: {
     backgroundColor: "#94F385",
     borderRadius: 30,

@@ -15,6 +15,9 @@ export default function login() {
  
   return (
     <View style={styles.container}>
+      <Image style={styles.image} source={require("./assets/logo.png")} />
+
+    <View style={styles.container}>
       <StatusBar style="auto" />
       <View style={styles.inputView}>
         <TextInput
@@ -34,11 +37,14 @@ export default function login() {
           onChangeText={(password) => setPassword(password)}
         />
       </View>
+      <TouchableOpacity>
+        <Text style={styles.signup_button}>Don't Have an Account?</Text>
+      </TouchableOpacity>
 
- 
       <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
+    </View>
     </View>
   );
 }
@@ -49,6 +55,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  
+  image: {
+    marginBottom: 40,
   },
  
   inputView: {
@@ -67,8 +77,12 @@ const styles = StyleSheet.create({
     padding: 10,
     marginLeft: 20,
   },
- 
- 
+
+  signup_button: {
+    height: 30,
+    marginBottom: 30,
+  },
+
   loginBtn: {
     width: "80%",
     borderRadius: 25,
