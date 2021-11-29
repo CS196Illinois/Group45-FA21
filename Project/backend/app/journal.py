@@ -1,4 +1,6 @@
 from random import *
+from models import User
+from app import db
 class Journal():
     entries = []
     def __init__(self):
