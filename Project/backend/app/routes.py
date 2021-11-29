@@ -23,7 +23,8 @@ def login():
         if user is None or not user.check_password(form.password.data):
             return render_template('login.html', info="login unsuccessful :(", form=form)
         login_user(user, remember=form.remember_me.data)
-        return render_template('login.html', info="login successful :) welcome, " + form.username.data, form=form)
+        return {'id': user.id, 'username': user.username, 'email': user.email}
+        # render_template('login.html', info="login successful :) welcome, " + form.username.data, form=form)
     return render_template('login.html', info="please sign in", form=form)
 @app.route('/logout')
 def logout():
@@ -40,3 +41,9 @@ def register():
         # flash('Congratulations, you are now a registered user!')
         return "you are registered :)"
     return render_template('register.html', title='Register', form=form)
+
+# @app.route('/prompt', methods=['GET', 'POST'])
+# def prompt():
+    # from journal import Journal
+    # journal = Journal()
+    # return journal.getRandomEntry
