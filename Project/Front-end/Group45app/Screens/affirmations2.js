@@ -10,20 +10,13 @@ const Flex = () => {
     <View style={[styles.container, {
       flexDirection: "column"
     }]}>
-    <View style={{ flex:1}}><Text style = {styles.title1}>Welcome to </Text>
-        <Text style = {styles.title2}>Affirmations! </Text></View>
-    <View style={{ flex:3, paddingTop: 50}}><Text style = {styles.textmain}>Affirmations is designed to be a space to clear the mind and read statements to boost confidence or mood. </Text>
-        <Text style = {styles.textmain}>Affirmations offers two options. </Text>
-        <Text style = {styles.subtext}>Easy come, easy go:</Text>
-        <Text style = {styles.textmain}>Affirmations will randomly appearon your screen for you to read.</Text>
-        <Text style = {styles.subtext}>Something more specific:</Text>
-        <Text style = {styles.textmain}>Scroll a list of affirmation and read specific ones.</Text>
-        <Text style = {styles.textmain}>We want you to feel better about youself.</Text></View>
-    <View style={{ flex:1, paddingTop: 40}}>
-        <Button
+    <View style={{ flex:1}}><Text style = {styles.title1}>Affirmations </Text></View>
+    <View style={{ flex:3, paddingTop: 50}}><Text style = {styles.textmain}>Affirmations is designed to be a space to clear the mind and read statements to boost confidence or mood. </Text></View>
+    <View style={{ flex:2, paddingTop: 50}}>
+    <Button
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
             textStyle={{textAlign: 'center', fontSize: 17}}
-            title={`Easy Come, Easy Go`}
+            title={`Another One`}
           />
           <Button
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
@@ -47,13 +40,13 @@ const styles = StyleSheet.create({
   textmain: {
     fontSize: 20,
     textAlign: 'center',
-    paddingVertical: 2.5,
+    paddingVertical: 100,
     fontStyle: 'Comfortaa',
    },
    subtext: {
      fontSize: 17,
      textAlign: 'center',
-     marginVertical: 2.5,
+     marginVertical: 5,
      fontStyle: 'Comfortaa',
      color: '#94F385',
    },
@@ -68,7 +61,7 @@ const styles = StyleSheet.create({
   title2: {
     color: "#20232a",
     textAlign: "right",
-    fontSize: 40,
+    fontSize: 28,
     marginBottom: 5,
     fontWeight: "bold"
   }
