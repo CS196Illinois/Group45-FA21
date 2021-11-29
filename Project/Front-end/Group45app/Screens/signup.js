@@ -41,6 +41,7 @@ export default function signup() {
  
       <TouchableOpacity style={styles.signupBtn}>
         <Text style={styles.signupText}>Sign Up</Text>
+        onPress={() => navigation.navigate('HomePage')}
       </TouchableOpacity>
     </View>
     </View>
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
   image: {
     marginBottom: 40,
   },
-  
+
   inputView: {
     backgroundColor: "#94F385",
     borderRadius: 30,

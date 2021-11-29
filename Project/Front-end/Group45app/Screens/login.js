@@ -39,10 +39,11 @@ export default function login() {
       </View>
       <TouchableOpacity>
         <Text style={styles.signup_button}>Don't Have an Account?</Text>
+        onPress={() => navigation.navigate('signup')}
       </TouchableOpacity>
-
       <TouchableOpacity style={styles.loginBtn}>
         <Text style={styles.loginText}>LOGIN</Text>
+        onPress={() => navigation.navigate('HomePage')}
       </TouchableOpacity>
     </View>
     </View>
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  
+
   image: {
     marginBottom: 40,
   },
