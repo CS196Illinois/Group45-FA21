@@ -5,7 +5,7 @@ import { Button } from 'react-native-elements'
 import { StyleSheet, Text, View } from 'react-native';
 
 
-const affirmationsHome = () => {
+const affirmationshome = () => {
   return(
     <View style={[styles.container, {
       flexDirection: "column"
@@ -24,6 +24,7 @@ const affirmationsHome = () => {
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
             textStyle={{textAlign: 'center', fontSize: 17}}
             title={`Easy Come, Easy Go`}
+            onPress={() => navigation.navigate('affirmations1')}
           />
           <Button
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}

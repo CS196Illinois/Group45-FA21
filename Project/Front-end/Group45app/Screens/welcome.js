@@ -4,7 +4,7 @@ import React from 'react';
 import { Button } from 'react-native-elements'
 import { StyleSheet, Text, View } from 'react-native';
 
-const Welcome = () => {
+const welcome = () => {
     return(
       <View style={[styles.container, {
         flexDirection: "column"
@@ -18,6 +18,7 @@ const Welcome = () => {
               buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
               textStyle={{textAlign: 'center', fontSize: 17}}
               title={`Continue`}
+              onPress={() => navigation.navigate('signup')}
             />
           </View>
       </View>

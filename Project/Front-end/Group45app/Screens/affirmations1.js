@@ -17,11 +17,18 @@ const affirmations1 = () => {
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
             textStyle={{textAlign: 'center', fontSize: 17}}
             title={`Another One`}
+            onPress={() => navigation.navigate('affirmations1')}
           />
-          <Button
+    <Button
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
             textStyle={{textAlign: 'center', fontSize: 17}}
             title={`Something More Specific`}
+          />
+      <Button
+            buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
+            textStyle={{textAlign: 'center', fontSize: 17}}
+            title={`Home`}
+            onPress={() => navigation.navigate('HomePage')}
           />
         </View>
     </View>
