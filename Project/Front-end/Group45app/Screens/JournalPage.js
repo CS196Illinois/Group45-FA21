@@ -65,8 +65,8 @@ const styles = StyleSheet.create({
   textMain: {
     margin: 40,
     fontSize: 17,
-    textAlign: 'Center',
+    textAlign: 'center',
     marginVertical: 5,
-    fontStyle: 'comfortaa',
+    //fontStyle: 'comfortaa',
   },
 });

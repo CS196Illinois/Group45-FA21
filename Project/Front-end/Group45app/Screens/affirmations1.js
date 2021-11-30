@@ -48,13 +48,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     paddingVertical: 100,
-    fontStyle: 'Comfortaa',
+    //fontStyle: 'Comfortaa',
    },
    subtext: {
      fontSize: 17,
      textAlign: 'center',
      marginVertical: 5,
-     fontStyle: 'Comfortaa',
+     //fontStyle: 'Comfortaa',
      color: '#94F385',
    },
    title1: {
