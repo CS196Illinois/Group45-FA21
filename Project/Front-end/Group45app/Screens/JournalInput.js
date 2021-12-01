@@ -85,9 +85,9 @@ const styles = StyleSheet.create({
   textMain1: {
     marginTop: 10,
     fontSize: 17,
-    textAlign: 'Center',
+    textAlign: 'center',
     marginVertical: 5,
-    fontStyle: 'comfortaa',
+    //fontStyle: 'comfortaa',
   },
   text: {
     marginTop: 25,
@@ -95,20 +95,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 5,
     marginHorizontal: 10,
-    fontStyle: 'comfortaa',
+    //fontStyle: 'comfortaa',
   },
     textMain: {
     fontSize: 17,
-    textAlign: 'Center',
+    textAlign: 'center',
     marginVertical: 5,
-    fontStyle: 'comfortaa',
+    //fontStyle: 'comfortaa',
   },
   subText: {
     fontSize: 22,
     fontWeight: 'bold',
     textAlign: 'center',
     marginVertical: 5,
-    fontStyle: 'comfortaa',
+    //fontStyle: 'comfortaa',
     color: '#94F385',
   },
   title1: {

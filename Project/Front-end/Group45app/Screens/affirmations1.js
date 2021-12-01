@@ -23,6 +23,7 @@ const affirmations1 = () => {
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
             textStyle={{textAlign: 'center', fontSize: 17}}
             title={`Something More Specific`}
+            onPress={() => navigation.navigate('affirmations2')}
           />
       <Button
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
@@ -48,13 +49,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     paddingVertical: 100,
-    fontStyle: 'Comfortaa',
+    //fontStyle: 'Comfortaa',
    },
    subtext: {
      fontSize: 17,
      textAlign: 'center',
      marginVertical: 5,
-     fontStyle: 'Comfortaa',
+     //fontStyle: 'Comfortaa',
      color: '#94F385',
    },
    title1: {
