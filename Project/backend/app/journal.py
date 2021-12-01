@@ -8,7 +8,7 @@ class Journal():
         with open('app/entry.txt') as entryData:
             self.entries = entryData.readlines()
     def getRandomEntry(self):
-        return self.entries[randint(0, len(self.entries)-1)]
+        return self.entries[randint(0, len(self.entries)-1)].strip()
     def submitEntry(self, body, prompt, user):
         entry = User(user_id=user.get_id(), prompt=prompt, body=body)
         db.session.add(entry)
