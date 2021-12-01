@@ -26,7 +26,7 @@ const affirmations1 = () => {
             onPress={() => navigation.navigate('HomePage')}
           />
         </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
