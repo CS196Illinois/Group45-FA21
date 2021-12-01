@@ -3,12 +3,12 @@ import {Text, View, StyleSheet, TextInput, ScrollView, TouchableWithoutFeedback,
 import { Button } from 'react-native-elements';
 import { StatusBar } from 'expo-status-bar';
 
-export default function JouranlScreen({ navigation }) {
+export default function GeneratePrompt({ navigation }) {
   return (
     <View style={styles.container}>
         <Text style = {styles.title1}>Journal</Text>
         <Text>Clear your mind...and write.</Text>
-        <Text style = {styles.textMain}>Prompt: Write in the textbox.</Text>
+        <Text style = {styles.textMain}>Prompt: </Text>
         
 <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
         <View>

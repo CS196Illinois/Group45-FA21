@@ -38,13 +38,13 @@ const welcome = () => {
       fontSize: 20,
       textAlign: 'center',
       paddingVertical: 50,
-      fontStyle: 'Comfortaa',
+      //fontStyle: 'Comfortaa',
      },
      subtext: {
        fontSize: 17,
        textAlign: 'center',
        marginVertical: 2.5,
-       fontStyle: 'Comfortaa',
+       //fontStyle: 'Comfortaa',
        color: '#94F385',
      },
      title1: {
