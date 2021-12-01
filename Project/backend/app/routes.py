@@ -5,7 +5,6 @@ from app.models import User, Entry
 from app.forms import LoginForm, RegistrationForm
 from app.journal import Journal
 from random import *
-journal = Journal
 
 # query string -> 10.27.09.91/index?arg1=value1&arg2=value2 use this for passing data to login and submitEntry and maybe other routes
 
@@ -16,14 +15,16 @@ def home():
 # user and login routes
 @app.route('/verify')
 def verify():
-    return current_user.password_hash
     user = current_user
     if not (current_user.is_authenticated):
         return jsonify(message="no user is logged in")
     return "username: " + current_user.username + "\n email: " + current_user.email
-@app.route('/login', methods=['GET', 'POST']) # use this route for login screen -- will return json of user if auth or {} if not
-def login(username, password, remember_me):
+@app.route('/login/<username>/<password>/<remember_me>', methods=['GET', 'POST']) # use this route for login screen -- will return json of user if auth or {} if not
+def login():
     try:
+        username = request.args['username']
+        password = request.args['password']
+        remember_me = request.args['remember_me']
         user = User.query.filter_by(username=username).first()
         if user is None or not user.check_password(password):
             return jsonify(message="username or password incorrect")
@@ -38,28 +39,21 @@ def login(username, password, remember_me):
 @app.route('/logout') # use this for logout button
 def logout():
     logout_user()
+    return jsonify(message="successfully logged out")
 @app.route('/register', methods=['GET', 'POST'])
 def register(username, email, password):
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data)
-        user.set_password(form.password.data)
+    try:
+        user = User(username=username, email=email)
+        user.set_password(password)
         db.session.add(user)
         db.session.commit()
-        # flash('Congratulations, you are now a registered user!')
-        return "you are registered :)"
-    return render_template('register.html', title='Register', form=form)
-
-    
-@app.route('/affirmation', methods=['GET', 'POST']) # untested -- affirmations api
-def affirmation():
-    source = request.args.get("https://www.affirmations.dev")
-    # response = requests.get(url).json
-    return source
+    finally:
+        return jsonify(message="invalid input")
 
 # journal routes
 @app.route('/prompt', methods=['GET', 'POST'])
 def prompt():
+    journal = Journal()
     return jsonify(prompt=journal.getRandomEntry())
 @app.route('/getEntries', methods=['GET', 'POST'])
 def getEntries():
@@ -69,6 +63,7 @@ def getEntries():
         return jsonify(message="not logged in")
 @app.route('/submitEntry', methods=['GET', 'POST'])
 def submitEntry(body, prompt):
+    journal = Journal
     if (current_user.is_authenticated):
         try:
             journal.submitEntry(body, prompt, current_user)
