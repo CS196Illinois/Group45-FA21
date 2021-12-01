@@ -4,8 +4,7 @@ import React from 'react';
 import { Button } from 'react-native-elements'
 import { StyleSheet, Text, View } from 'react-native';
 
-
-const affirmations1 = () => {
+export default function affirmations1({ navigation }) {
   return(
     <View style={[styles.container, {
       flexDirection: "column"
@@ -32,8 +31,8 @@ const affirmations1 = () => {
           />
         </View>
     </View>
-  );
-};
+  )
+}
 
       
 
@@ -74,4 +73,4 @@ const styles = StyleSheet.create({
   }
  });
 
- export default affirmations1;
+ //export default affirmations1;

@@ -45,6 +45,7 @@ export default function HomeScreen({ navigation }) {
           borderTopLeftRadius: 20,
         }}
         title = {'How is your day?'}
+        onPress={() => navigation.navigate('Affirmations')}
         />
     </View>
   )

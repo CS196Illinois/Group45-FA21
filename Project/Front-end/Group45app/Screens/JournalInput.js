@@ -38,6 +38,7 @@ export default function InputPage({ navigation }) {
           fontSize: 17
         }}
         title = {'Generate Topic'}
+        onPress={() => navigation.navigate('JournalGenerate')}
         />
       <Button
         buttonStyle = {{
