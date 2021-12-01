@@ -2,27 +2,22 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 //import { render } from 'react-dom';
 import { Button } from 'react-native-elements'
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, SafeAreaView } from 'react-native';
 
-export default function affirmations1({ navigation }) {
+
+const affirmations1 = () => {
   return(
-    <View style={[styles.container, {
+    <SafeAreaView style={[styles.container, {
       flexDirection: "column"
     }]}>
     <View style={{ flex:1}}><Text style = {styles.title1}>Affirmations </Text></View>
-    <View style={{ flex:3, paddingTop: 50}}><Text style = {styles.textmain}>Affirmations is designed to be a space to clear the mind and read statements to boost confidence or mood. </Text></View>
+    <View style={{ flex:3, paddingTop: 50}}><Text style = {styles.textmain}>Insert affirmations here </Text></View>
     <View style={{ flex:2, paddingTop: 50}}>
     <Button
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
             textStyle={{textAlign: 'center', fontSize: 17}}
-            title={`Another One`}
+            title={`Easy Come, Easy Go`}
             onPress={() => navigation.navigate('affirmations1')}
-          />
-    <Button
-            buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
-            textStyle={{textAlign: 'center', fontSize: 17}}
-            title={`Something More Specific`}
-            onPress={() => navigation.navigate('affirmations2')}
           />
       <Button
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
@@ -31,9 +26,9 @@ export default function affirmations1({ navigation }) {
             onPress={() => navigation.navigate('HomePage')}
           />
         </View>
-    </View>
-  )
-}
+    </SafeAreaView>
+  );
+};
 
       
 
@@ -74,4 +69,4 @@ const styles = StyleSheet.create({
   }
  });
 
- //export default affirmations1;
+ export default affirmations1;
