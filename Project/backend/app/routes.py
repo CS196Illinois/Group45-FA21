@@ -1,12 +1,10 @@
 from flask import render_template, flash, redirect, url_for, request
 from app import app, db
 from flask_login import current_user, login_user, logout_user
-from app.models import User
+from app.models import User, Entry
 from app.forms import LoginForm, RegistrationForm
-## import urlopen
-# import requests
-# import requests
-# from journal import Journal
+from app.journal import Journal
+from random import *
 
 @app.route('/')
 def home():
@@ -53,21 +51,3 @@ def register():
 def prompt():
     journal = Journal()
     return journal.getRandomEntry()
-
-
-
-
-# from random import *
-# from models import User
-# from app import db
-class Journal():
-    entries = []
-    def __init__(self):
-        with open('entry.txt') as entryData:
-            entries = entryData.readlines()
-    def getRandomEntry(self):
-        return self.entries[random.randint(0, self.entries.length()-1)]
-    def submitEntry(self, body, prompt, user):
-        entry = User(user_id=user.get_id(), prompt=prompt, body=body)
-        db.session.add(entry)
-        db.session.commit()
