@@ -4,7 +4,7 @@ import React from 'react';
 import { Button } from 'react-native-elements'
 import { StyleSheet, Text, View } from 'react-native';
 
-const welcome = () => {
+export default function welcome({ navigation }) {
     return(
       <View style={[styles.container, {
         flexDirection: "column"
@@ -18,14 +18,12 @@ const welcome = () => {
               buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
               textStyle={{textAlign: 'center', fontSize: 17}}
               title={`Continue`}
-              onPress={() => navigation.navigate('signup')}
+              onPress={() => navigation.navigate('Sign Up')}
             />
           </View>
       </View>
-    );
-  };
-  
-        
+    )
+  }
   
   const styles = StyleSheet.create({
      container: {
@@ -62,5 +60,3 @@ const welcome = () => {
       marginBottom: 5,
     }
    });
-  
-   export default Welcome;

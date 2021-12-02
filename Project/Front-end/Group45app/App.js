@@ -8,6 +8,9 @@ import affirmationsHome from '../Group45app/Screens/affirmationshome';
 import affirmations1 from './Screens/affirmations1';
 import login from './Screens/login';
 import GeneratePrompt from './Screens/GeneratePromptScreen';
+import welcome from './Screens/welcome';
+import signup from './Screens/signup';
+import IntroWelcome from './Screens/WelcomeToBreeze';
 
 
 const Stack = createNativeStackNavigator();
@@ -16,7 +19,10 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Welcome">
+        <Stack.Screen name="Welcome" component={IntroWelcome}/>
+        <Stack.Screen name="Welcome - New User" component={welcome}/>
+        <Stack.Screen name="Sign Up" component={signup}/>
         <Stack.Screen name="Login" component={login}/>
         <Stack.Screen name="Home" component={HomeScreen}/>
         <Stack.Screen name="Journal" component={JouranlScreen}/>
