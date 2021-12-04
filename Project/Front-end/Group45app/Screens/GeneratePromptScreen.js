@@ -1,14 +1,37 @@
-import React from 'react';
-import {Text, View, StyleSheet, TextInput, ScrollView, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import {Text, View, StyleSheet, TextInput, ScrollView, TouchableWithoutFeedback, Keyboard, ActivityIndicator, FlatList} from 'react-native';
 import { Button } from 'react-native-elements';
 import { StatusBar } from 'expo-status-bar';
 
-export default function GeneratePrompt({ navigation }) {
+
+
+export default function generatePrompt({ navigation }) {
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  const getJournalPrompts = async () => {
+    try {
+     const response = await fetch('http://127.0.0.1:5000/prompt');
+     const json = await response.json();
+     console.log(json.prompt)
+     setData(json.prompt);
+   } catch (error) {
+     console.error(error);
+   } finally {
+     setLoading(false);
+   }
+  }
+  
+  useEffect(() => {
+    getJournalPrompts();
+  }, []);
+
   return (
     <View style={styles.container}>
         <Text style = {styles.title1}>Journal</Text>
         <Text>Clear your mind...and write.</Text>
         <Text style = {styles.textMain}>Prompt: </Text>
+        <Text style = {styles.textMain}>{data}</Text>
+        
         
 <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
         <View>
