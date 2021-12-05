@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
 */
 
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   View,
@@ -110,6 +110,31 @@ import { Button } from 'react-native-elements';
 export default function login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setLoading] = useState(true);
+  var [data, setData] = useState(0);
+  const checkLogin = async (username, password) => {
+    try {
+     const response = await fetch('http://127.0.0.1:5000/login/' + username + '/' + password + '/true');
+     const json = await response.json();
+     console.log(json.message)
+     setData(json.success);
+   } catch (error) {
+     console.error(error);
+   } finally {
+     setLoading(false);
+   }
+  }
+
+  function login(username, password) {
+    checkLogin(username, password)
+    var loggedIn = data
+    console.log(loggedIn)
+    if (loggedIn == 1) {
+      navigation.navigate('Home')
+    } else {
+      <Text>Json.message</Text>
+    }
+  }
  
   return (
     <View style={styles.container}>
@@ -147,7 +172,7 @@ export default function login({ navigation }) {
           fontSize: 17
         }}
         title = {'LOGIN'}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => login(email, password) /*navigation.navigate('Home')*/}
         />
     </View>
   );

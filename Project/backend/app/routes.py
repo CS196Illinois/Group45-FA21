@@ -20,22 +20,22 @@ def verify():
         return jsonify(message="no user is logged in")
     return "username: " + current_user.username + "\n email: " + current_user.email
 @app.route('/login/<username>/<password>/<remember_me>', methods=['GET', 'POST']) # use this route for login screen -- will return json of user if auth or {} if not
-def login():
-    try:
-        username = request.args['username']
-        password = request.args['password']
-        remember_me = request.args['remember_me']
-        user = User.query.filter_by(username=username).first()
-        if user is None or not user.check_password(password):
-            return jsonify(message="username or password incorrect")
-        login_user(user, remember=remember_me)
-        return jsonify(
-            id=user.id,
-            username=user.username,
-            email=user.email
-        )
-    finally:
-        return jsonify(message="error logging in (SHOULD NOT HAPPEN IN PRODUCTION)")
+def login(username, password, remember_me): # http://127.0.0.1:5000/login/user/pass/true
+    users = User.query.all()
+    for user in users:
+        print(user.username)
+    print(username)
+    user = User.query.filter_by(username=username).first()
+    if user is None or not user.check_password(password):
+        return jsonify(message="username or password incorrect", success=0)
+    login_user(user, remember=remember_me)
+    return jsonify(
+        message="success",
+        success=1,
+        id=user.id,
+        username=user.username,
+        email=user.email
+    )
 @app.route('/logout') # use this for logout button
 def logout():
     logout_user()
