@@ -4,8 +4,7 @@ import React from 'react';
 import { Button } from 'react-native-elements'
 import { StyleSheet, Text, View } from 'react-native';
 
-
-const affirmations1 = () => {
+export default function affirmations1({ navigation }) {
   return(
     <View style={[styles.container, {
       flexDirection: "column"
@@ -23,6 +22,7 @@ const affirmations1 = () => {
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
             textStyle={{textAlign: 'center', fontSize: 17}}
             title={`Something More Specific`}
+            onPress={() => navigation.navigate('affirmations2')}
           />
       <Button
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
@@ -32,8 +32,8 @@ const affirmations1 = () => {
           />
         </View>
     </View>
-  );
-};
+  )
+}
 
       
 
@@ -48,13 +48,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     paddingVertical: 100,
-    fontStyle: 'Comfortaa',
+    //fontStyle: 'Comfortaa',
    },
    subtext: {
      fontSize: 17,
      textAlign: 'center',
      marginVertical: 5,
-     fontStyle: 'Comfortaa',
+     //fontStyle: 'Comfortaa',
      color: '#94F385',
    },
    title1: {
@@ -74,4 +74,4 @@ const styles = StyleSheet.create({
   }
  });
 
- export default affirmations1;
+ //export default affirmations1;

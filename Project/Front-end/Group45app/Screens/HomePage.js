@@ -45,6 +45,7 @@ export default function HomeScreen({ navigation }) {
           borderTopLeftRadius: 20,
         }}
         title = {'How is your day?'}
+        onPress={() => navigation.navigate('Affirmations')}
         />
     </View>
   )
@@ -59,15 +60,15 @@ const styles = StyleSheet.create({
   },
   textMain: {
     fontSize: 17,
-    textAlign: 'Center',
+    textAlign: 'center',
     marginVertical: 5,
-    fontStyle: 'comfortaa',
+    //fontStyle: 'comfortaa',
   },
   subText: {
     fontSize: 17,
     textAlign: 'center',
     marginVertical: 5,
-    fontStyle: 'comfortaa',
+    //fontStyle: 'comfortaa',
     color: '#94F385',
   },
   title1: {
