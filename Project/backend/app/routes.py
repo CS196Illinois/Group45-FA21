@@ -40,10 +40,10 @@ def login(username, password, remember_me): # http://127.0.0.1:5000/login/user/p
 def logout():
     logout_user()
     return jsonify(message="successfully logged out")
-@app.route('/register', methods=['GET', 'POST'])
-def register(username, email, password):
+@app.route('/register/<username>/<password>', methods=['GET', 'POST'])
+def register(username, password):
     try:
-        user = User(username=username, email=email)
+        user = User(username=username, email="none")
         user.set_password(password)
         db.session.add(user)
         db.session.commit()
