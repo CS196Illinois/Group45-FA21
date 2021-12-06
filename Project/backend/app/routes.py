@@ -4,6 +4,7 @@ from flask_login import current_user, login_user, logout_user
 from app.models import User, Entry
 from app.forms import LoginForm, RegistrationForm
 from app.journal import Journal
+from app.affirmations import Affirmations
 from random import *
 
 # query string -> 10.27.09.91/index?arg1=value1&arg2=value2 use this for passing data to login and submitEntry and maybe other routes
@@ -71,3 +72,9 @@ def submitEntry(body, prompt):
             return jsonify(message="not successfully submitted")
     else:
         return jsonify(message="not logged in")
+
+# affirmation route
+@app.route('/affirmation', methods=['GET', 'POST'])
+def affirmation():
+    affirmationGenerator = Affirmations()
+    return jsonify(affirmation=affirmationGenerator.getRandomAffirmation())
