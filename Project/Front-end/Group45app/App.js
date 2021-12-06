@@ -5,12 +5,13 @@ import HomeScreen from '../Group45app/Screens/HomePage';
 import JouranlScreen from '../Group45app/Screens/JournalInput';
 import InputPage from '../Group45app/Screens/JournalPage';
 import affirmationsHome from '../Group45app/Screens/affirmationshome';
-import affirmations1 from './Screens/affirmations1';
+//import affirmations1 from './Screens/affirmations1';
 import login from './Screens/login';
 import GeneratePrompt from './Screens/GeneratePromptScreen';
 import welcome from './Screens/welcome';
 import signup from './Screens/signup';
 import IntroWelcome from './Screens/WelcomeToBreeze';
+import affirmations2 from './Screens/affirmationInputPage';
 
 
 const Stack = createNativeStackNavigator();
@@ -29,7 +30,7 @@ function App() {
         <Stack.Screen name="JournalGenerate" component={GeneratePrompt}/>
         <Stack.Screen name="JournalInput" component={InputPage} />
         <Stack.Screen name="Affirmations" component={affirmationsHome} />
-        <Stack.Screen name="Easy Come, Easy Go" component={affirmations1} />
+        <Stack.Screen name="Easy Come, Easy Go" component={affirmations2} />
       </Stack.Navigator>
     </NavigationContainer>
   );

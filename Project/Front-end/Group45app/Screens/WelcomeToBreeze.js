@@ -1,16 +1,17 @@
 import React from 'react';
-import { Text, View, StyleSheet} from 'react-native';
+import { Text, View, StyleSheet, Image, LogBox} from 'react-native';
 import { Button } from 'react-native-elements';
 import { StatusBar } from 'expo-status-bar';
 
 export default function IntroWelcome({ navigation }) {
   return (
     <View style = {styles.container}>
-      <Text style = {styles.title1}>Breeze</Text>
+      <Image 
+      style={{width: 250, height: 250}}
+      source={require('../assets/logo.png')} />
       <Text style = {styles.title2}>Mental Health App</Text>
       <Text style = {styles.text}>
       One step at a time to bettering oneself </Text>
-
       <StatusBar style = 'auto' />
       <Button
         style = {{
