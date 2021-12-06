@@ -22,6 +22,7 @@ export default function affirmations1({ navigation }) {
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
             textStyle={{textAlign: 'center', fontSize: 17}}
             title={`Something More Specific`}
+            onPress={() => navigation.navigate('affirmations2')}
           />
       <Button
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
