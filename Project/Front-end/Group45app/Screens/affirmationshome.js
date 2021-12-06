@@ -5,7 +5,7 @@ import { Button } from 'react-native-elements'
 import { StyleSheet, Text, View } from 'react-native';
 
 
-const affirmationshome = () => {
+export default function affirmationsHome({ navigation }) {
   return(
     <View style={[styles.container, {
       flexDirection: "column"
@@ -24,7 +24,7 @@ const affirmationshome = () => {
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
             textStyle={{textAlign: 'center', fontSize: 17}}
             title={`Easy Come, Easy Go`}
-            onPress={() => navigation.navigate('affirmations1')}
+            onPress={() => navigation.navigate('Easy Come, Easy Go')}
           />
           <Button
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
@@ -34,8 +34,8 @@ const affirmationshome = () => {
           />
         </View>
     </View>
-  );
-};
+  )
+}
 
       
 
@@ -76,4 +76,4 @@ const styles = StyleSheet.create({
   }
  });
 
- export default affirmationsHome;
+// export default affirmationsHome;
