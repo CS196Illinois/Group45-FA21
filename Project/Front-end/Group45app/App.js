@@ -8,6 +8,7 @@ import affirmationsHome from '../Group45app/Screens/affirmationshome';
 import affirmations1 from './Screens/affirmations1';
 import login from './Screens/login';
 import GeneratePrompt from './Screens/GeneratePromptScreen';
+import signup from './Screens/signup';
 
 
 const Stack = createNativeStackNavigator();
@@ -19,6 +20,7 @@ function App() {
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={login}/>
         <Stack.Screen name="Home" component={HomeScreen}/>
+        <Stack.Screen name="SignUp" component={signup} />
         <Stack.Screen name="Journal" component={JouranlScreen}/>
         <Stack.Screen name="JournalGenerate" component={GeneratePrompt}/>
         <Stack.Screen name="JournalInput" component={InputPage} />
