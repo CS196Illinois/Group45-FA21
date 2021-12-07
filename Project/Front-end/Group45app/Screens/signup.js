@@ -9,10 +9,31 @@ import {
   TouchableOpacity,
 } from "react-native";
  
-export default function signup() {
+export default function signup({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setLoading] = useState(true);
  
+  var [data] = useState(0);
+  const register = async (username, password) => {
+    try {
+     const response = await fetch('http://10.0.2.2:5000/register/' + username + '/' + password);
+     const json = await response.json();
+     console.log(json.message)
+     data = json.message
+     console.log(data)
+     if (data == "success") {
+      navigation.navigate('Home')
+    } else {
+      <Text>Unsuccessful, please try again.</Text>
+    }
+   } catch (error) {
+     console.error(error);
+   } finally {
+     setLoading(false);
+   }
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
@@ -35,8 +56,8 @@ export default function signup() {
         />
       </View>
 
- 
-      <TouchableOpacity style={styles.signupBtn}>
+      
+      <TouchableOpacity style={styles.signupBtn} onPress={() => register(email, password)}>
         <Text style={styles.signupText}>Sign Up</Text>
       </TouchableOpacity>
     </View>

@@ -10,7 +10,7 @@ export default function generatePrompt({ navigation }) {
   const [data, setData] = useState([]);
   const getJournalPrompts = async () => {
     try {
-     const response = await fetch('http://127.0.0.1:5000/prompt');
+     const response = await fetch('http://10.0.2.2:5000/prompt');
      const json = await response.json();
      console.log(json.prompt)
      setData(json.prompt);
@@ -37,7 +37,7 @@ export default function generatePrompt({ navigation }) {
         <View>
           <TextInput 
             multiline
-            textAlignVertical
+            textAlignVertical="top"
             style={styles.input} />
         </View>
 </TouchableWithoutFeedback>
