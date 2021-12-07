@@ -183,24 +183,8 @@ export default function login({ navigation }) {
         }}
         title = {'LOGIN'}
         onPress={() => checkLogin(email, password) /*navigation.navigate('Home')*/}
+        onPress={() => navigation.navigate('Home')}
         />
-
-      <Button
-        buttonStyle = {{
-          backgroundColor: '#94F385',
-          borderRadius: 25,
-          marginVertical: 10,
-          minHeight: 75,
-          width: 300, 
-          
-        }}
-        textStyle = {{
-          textAlign: 'center',
-          fontSize: 17
-        }}
-        title = {'SIGN UP'}
-        onPress={() => navigation.navigate('SignUp')}
-      />
     </View>
   );
 }
