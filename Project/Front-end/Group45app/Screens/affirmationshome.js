@@ -24,6 +24,7 @@ export default function affirmationsHome({ navigation }) {
             title={`Easy Come, Easy Go`}
             onPress={() => navigation.navigate('Easy Come, Easy Go')}
           />
+
         </View>
     </View>
   )
