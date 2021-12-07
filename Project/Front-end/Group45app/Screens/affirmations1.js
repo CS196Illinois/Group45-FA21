@@ -29,7 +29,7 @@ export default function affirmations1({ navigation }) {
       flexDirection: "column"
     }]}>
     <View style={{ flex:1}}><Text style = {styles.title1}>Affirmations </Text></View>
-    <View style={{ flex:3, paddingTop: 50}}><Text style = {styles.textmain}>Affirmations is designed to be a space to clear the mind and read statements to boost confidence or mood. </Text>
+    <View style={{ flex:3, paddingTop: 50}}>
     <Text style = {styles.textmain}>{data} </Text>
     <Button
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
