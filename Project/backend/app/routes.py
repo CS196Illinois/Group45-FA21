@@ -2,12 +2,9 @@ from flask import render_template, flash, redirect, url_for, request, jsonify
 from app import app, db
 from flask_login import current_user, login_user, logout_user
 from app.models import User, Entry
-from app.forms import LoginForm, RegistrationForm
 from app.journal import Journal
 from app.affirmations import Affirmations
 from random import *
-
-# query string -> 10.27.09.91/index?arg1=value1&arg2=value2 use this for passing data to login and submitEntry and maybe other routes
 
 @app.route('/')
 def home():
@@ -21,7 +18,7 @@ def verify():
         return jsonify(message="no user is logged in")
     return "username: " + current_user.username + "\n email: " + current_user.email
 @app.route('/login/<username>/<password>/<remember_me>', methods=['GET', 'POST']) # use this route for login screen -- will return json of user if auth or {} if not
-def login(username, password, remember_me): # http://127.0.0.1:5000/login/user/pass/true
+def login(username, password, remember_me): # http://127.0.0.1:5000/login/user/pass/true for demo purposes
     users = User.query.all()
     for user in users:
         print(user.username)
@@ -37,19 +34,26 @@ def login(username, password, remember_me): # http://127.0.0.1:5000/login/user/p
         username=user.username,
         email=user.email
     )
+@app.route('/getUsers') # dev use only
+def getUsers():
+    users = User.query.all()
+    for u in users:
+        print(u.id, u.username)
+    return "success"
 @app.route('/logout') # use this for logout button
 def logout():
     logout_user()
     return jsonify(message="successfully logged out")
 @app.route('/register/<username>/<password>', methods=['GET', 'POST'])
 def register(username, password):
-    try:
-        user = User(username=username, email="none")
+    #try:
+        user = User(username=username, email="none@gmail.com")
         user.set_password(password)
         db.session.add(user)
         db.session.commit()
-    finally:
-        return jsonify(message="invalid input")
+        return jsonify(message="success")
+    #finally:
+    #    return jsonify(message="failure")
 
 # journal routes
 @app.route('/prompt', methods=['GET', 'POST'])

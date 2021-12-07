@@ -111,13 +111,19 @@ export default function login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setLoading] = useState(true);
-  var [data, setData] = useState(0);
+  var [data] = useState(0);
   const checkLogin = async (username, password) => {
     try {
      const response = await fetch('http://127.0.0.1:5000/login/' + username + '/' + password + '/true');
      const json = await response.json();
      console.log(json.message)
-     setData(json.success);
+     data = json.success
+     console.log(data)
+     if (data == 1) {
+      navigation.navigate('Home')
+    } else {
+      <Text>json.message</Text>
+    }
    } catch (error) {
      console.error(error);
    } finally {
@@ -172,7 +178,7 @@ export default function login({ navigation }) {
           fontSize: 17
         }}
         title = {'LOGIN'}
-        onPress={() => login(email, password) /*navigation.navigate('Home')*/}
+        onPress={() => checkLogin(email, password) /*navigation.navigate('Home')*/}
         />
 
       <Button
