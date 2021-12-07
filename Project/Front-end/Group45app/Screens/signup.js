@@ -17,7 +17,7 @@ export default function signup({ navigation }) {
   var [data] = useState(0);
   const register = async (username, password) => {
     try {
-     const response = await fetch('http://127.0.0.1:5000/register/' + username + '/' + password);
+     const response = await fetch('http://10.0.2.2:5000/register/' + username + '/' + password);
      const json = await response.json();
      console.log(json.message)
      data = json.message

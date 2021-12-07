@@ -114,7 +114,7 @@ export default function login({ navigation }) {
   var [data] = useState(0);
   const checkLogin = async (username, password) => {
     try {
-     const response = await fetch('http://127.0.0.1:5000/login/' + username + '/' + password + '/true');
+     const response = await fetch('http://10.0.2.2:5000/login/' + username + '/' + password + '/true');
      const json = await response.json();
      console.log(json.message)
      data = json.success

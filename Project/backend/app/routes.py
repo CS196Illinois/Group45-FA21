@@ -46,14 +46,14 @@ def logout():
     return jsonify(message="successfully logged out")
 @app.route('/register/<username>/<password>', methods=['GET', 'POST'])
 def register(username, password):
-    #try:
+    try:
         user = User(username=username, email="none@gmail.com")
         user.set_password(password)
         db.session.add(user)
         db.session.commit()
         return jsonify(message="success")
-    #finally:
-    #    return jsonify(message="failure")
+    finally:
+        return jsonify(message="failure")
 
 # journal routes
 @app.route('/prompt', methods=['GET', 'POST'])
