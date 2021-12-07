@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image, LogBox} from 'react-native';
+import { Text, View, StyleSheet, Image, } from 'react-native';
 import { Button } from 'react-native-elements';
 import { StatusBar } from 'expo-status-bar';
 
