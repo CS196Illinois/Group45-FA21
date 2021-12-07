@@ -1,13 +1,14 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image} from 'react-native';
 import { Button } from 'react-native-elements';
 import { StatusBar } from 'expo-status-bar';
 
 export default function HomeScreen({ navigation }) {
   return (
     <View style = {styles.container}>
-      <Text style = {styles.title1}>Breeze</Text>
-      <Text style = {styles.title2}>Welcome [Name] </Text>
+      <Text style = {styles.title2}>Welcome to <Image 
+          style={{width: 50, height: 50}}
+          source={require('../assets/logo.png')} /></Text>
       <Text style = {styles.textMain}>
       What's on today's agenda?</Text>
       <StatusBar style = 'auto' />
@@ -26,7 +27,7 @@ export default function HomeScreen({ navigation }) {
           borderTopRightRadius: 20, 
           borderTopLeftRadius: 20,
         }}
-        title = {'How are you feeling?'}
+        title = {'How are you feeling? -- Journal'}
         onPress={() => navigation.navigate('Journal')}
         />
       <Button
@@ -44,7 +45,7 @@ export default function HomeScreen({ navigation }) {
           borderTopRightRadius: 20, 
           borderTopLeftRadius: 20,
         }}
-        title = {'How is your day?'}
+        title = {'How is your day? -- Affirmations'}
         onPress={() => navigation.navigate('Affirmations')}
         />
     </View>
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
   subText: {
     fontSize: 17,
     textAlign: 'center',
-    marginVertical: 5,
+    marginBottom: 30, 
     //fontStyle: 'comfortaa',
     color: '#94F385',
   },
@@ -80,8 +81,8 @@ const styles = StyleSheet.create({
   title2: {
     color: '#20232a',
     textAlign: 'right',
-    fontSize: 28,
-    marginBottom: 5,
+    fontSize: 40,
+    marginBottom: 30,
     fontWeight: 'bold',
   }
 });

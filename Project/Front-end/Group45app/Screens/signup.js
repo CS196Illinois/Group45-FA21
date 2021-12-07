@@ -2,64 +2,57 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import {
   StyleSheet,
-  Text,
   View,
   TextInput,
-  Button,
-  TouchableOpacity,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from "react-native";
+import { Button } from 'react-native-elements';
  
-export default function signup({ navigation }) {
+export default function signUp({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading, setLoading] = useState(true);
  
-  var [data] = useState(0);
-  const register = async (username, password) => {
-    try {
-     const response = await fetch('http://10.0.2.2:5000/register/' + username + '/' + password);
-     const json = await response.json();
-     console.log(json.message)
-     data = json.message
-     console.log(data)
-     if (data == "success") {
-      navigation.navigate('Home')
-    } else {
-      <Text>Unsuccessful, please try again.</Text>
-    }
-   } catch (error) {
-     console.error(error);
-   } finally {
-     setLoading(false);
-   }
-  }
-
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
+  <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
           placeholder="Email"
-          placeholderTextColor="#003f5c"
+          placeholderTextColor="#FFFFFF"
           onChangeText={(email) => setEmail(email)}
         />
       </View>
+  </TouchableWithoutFeedback>
  
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
           placeholder="Password"
-          placeholderTextColor="#003f5c"
+          placeholderTextColor="#FFFFFF"
           secureTextEntry={true}
           onChangeText={(password) => setPassword(password)}
         />
       </View>
 
-      
-      <TouchableOpacity style={styles.signupBtn} onPress={() => register(email, password)}>
-        <Text style={styles.signupText}>Sign Up</Text>
-      </TouchableOpacity>
+      <Button
+        buttonStyle = {{
+          backgroundColor: '#94F385',
+          borderRadius: 25,
+          marginVertical: 10,
+          minHeight: 75,
+          width: 300, 
+          
+        }}
+        textStyle = {{
+          textAlign: 'center',
+          fontSize: 17
+        }}
+        title = {'SIGN UP'}
+        onPress={() => navigation.navigate('Home')}
+        />
     </View>
   );
 }
@@ -71,11 +64,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-
+  
   image: {
     marginBottom: 40,
   },
-  
+ 
   inputView: {
     backgroundColor: "#94F385",
     borderRadius: 30,
@@ -92,9 +85,13 @@ const styles = StyleSheet.create({
     padding: 10,
     marginLeft: 20,
   },
- 
- 
-  signupBtn: {
+
+  signup_button: {
+    height: 30,
+    marginBottom: 30,
+  },
+
+  loginBtn: {
     width: "80%",
     borderRadius: 25,
     height: 50,

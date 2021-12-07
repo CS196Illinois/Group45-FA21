@@ -15,10 +15,8 @@ export default function affirmationsHome({ navigation }) {
     <View style={{ flex:3, paddingTop: 50}}><Text style = {styles.textmain}>Affirmations is designed to be a space to clear the mind and read statements to boost confidence or mood. </Text>
         <Text style = {styles.textmain}>Affirmations offers two options. </Text>
         <Text style = {styles.subtext}>Easy come, easy go:</Text>
-        <Text style = {styles.textmain}>Affirmations will randomly appearon your screen for you to read.</Text>
-        <Text style = {styles.subtext}>Something more specific:</Text>
-        <Text style = {styles.textmain}>Scroll a list of affirmation and read specific ones.</Text>
-        <Text style = {styles.textmain}>We want you to feel better about youself.</Text></View>
+        <Text style = {styles.textmain}>Affirmations will randomly appear on your screen for you to read.</Text>
+</View>
     <View style={{ flex:1, paddingTop: 40}}>
         <Button
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
@@ -72,3 +70,9 @@ const styles = StyleSheet.create({
  });
 
 // export default affirmationsHome;
+
+/* 
+        <Text style = {styles.subtext}>Something more specific:</Text>
+        <Text style = {styles.textmain}>Scroll a list of affirmation and read specific ones.</Text>
+        <Text style = {styles.textmain}>We want you to feel better about youself.</Text>
+*/

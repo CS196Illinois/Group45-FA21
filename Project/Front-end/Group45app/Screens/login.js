@@ -104,6 +104,8 @@ import {
   StyleSheet,
   View,
   TextInput,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from "react-native";
 import { Button } from 'react-native-elements';
  
@@ -145,6 +147,7 @@ export default function login({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
+  <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
@@ -153,6 +156,7 @@ export default function login({ navigation }) {
           onChangeText={(email) => setEmail(email)}
         />
       </View>
+  </TouchableWithoutFeedback>
  
       <View style={styles.inputView}>
         <TextInput
@@ -179,24 +183,8 @@ export default function login({ navigation }) {
         }}
         title = {'LOGIN'}
         onPress={() => checkLogin(email, password) /*navigation.navigate('Home')*/}
+        onPress={() => navigation.navigate('Home')}
         />
-
-      <Button
-        buttonStyle = {{
-          backgroundColor: '#94F385',
-          borderRadius: 25,
-          marginVertical: 10,
-          minHeight: 75,
-          width: 300, 
-          
-        }}
-        textStyle = {{
-          textAlign: 'center',
-          fontSize: 17
-        }}
-        title = {'SIGN UP'}
-        onPress={() => navigation.navigate('SignUp')}
-      />
     </View>
   );
 }
