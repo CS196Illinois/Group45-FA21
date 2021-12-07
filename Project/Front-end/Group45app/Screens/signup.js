@@ -15,9 +15,6 @@ export default function signup() {
  
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("./assets/logo.png")} />
-
-    <View style={styles.container}>
       <StatusBar style="auto" />
       <View style={styles.inputView}>
         <TextInput
@@ -42,7 +39,6 @@ export default function signup() {
       <TouchableOpacity style={styles.signupBtn}>
         <Text style={styles.signupText}>Sign Up</Text>
       </TouchableOpacity>
-    </View>
     </View>
   );
 }

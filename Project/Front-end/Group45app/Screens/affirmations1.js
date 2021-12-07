@@ -1,17 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 //import { render } from 'react-dom';
 import { Button } from 'react-native-elements'
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function affirmations1({ navigation }) {
-  return(
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  const getAffirmation = async () => {
+    try {
+     const response = await fetch('http://127.0.0.1:5000/affirmation');
+     const json = await response.json();
+     console.log(json.affirmation)
+     setData(json.affirmation);
+   } catch (error) { 
+     console.error(error);
+   } finally {
+     setLoading(false);
+   }
+  }
+
+  useEffect(() => {
+    getAffirmation();
+  }, []);
+
+  return (
     <View style={[styles.container, {
       flexDirection: "column"
     }]}>
     <View style={{ flex:1}}><Text style = {styles.title1}>Affirmations </Text></View>
-    <View style={{ flex:3, paddingTop: 50}}><Text style = {styles.textmain}>Affirmations is designed to be a space to clear the mind and read statements to boost confidence or mood. </Text></View>
-    <View style={{ flex:2, paddingTop: 50}}>
+    <View style={{ flex:3, paddingTop: 50}}><Text style = {styles.textmain}>Affirmations is designed to be a space to clear the mind and read statements to boost confidence or mood. </Text>
+    <Text style = {styles.textmain}>{data} </Text>
     <Button
             buttonStyle={{backgroundColor: '#94F385', borderRadius: 50, marginVertical: 10}}
             textStyle={{textAlign: 'center', fontSize: 17}}

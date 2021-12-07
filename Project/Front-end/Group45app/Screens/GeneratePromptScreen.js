@@ -14,7 +14,7 @@ export default function generatePrompt({ navigation }) {
      const json = await response.json();
      console.log(json.prompt)
      setData(json.prompt);
-   } catch (error) {
+   } catch (error) { 
      console.error(error);
    } finally {
      setLoading(false);
