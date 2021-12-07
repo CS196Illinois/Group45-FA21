@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
 */
 
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
   View,
@@ -112,6 +112,37 @@ import { Button } from 'react-native-elements';
 export default function login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setLoading] = useState(true);
+  var [data] = useState(0);
+  const checkLogin = async (username, password) => {
+    try {
+     const response = await fetch('http://10.0.2.2:5000/login/' + username + '/' + password + '/true');
+     const json = await response.json();
+     console.log(json.message)
+     data = json.success
+     console.log(data)
+     if (data == 1) {
+      navigation.navigate('Home')
+    } else {
+      <Text>json.message</Text>
+    }
+   } catch (error) {
+     console.error(error);
+   } finally {
+     setLoading(false);
+   }
+  }
+
+  function login(username, password) {
+    checkLogin(username, password)
+    var loggedIn = data
+    console.log(loggedIn)
+    if (loggedIn == 1) {
+      navigation.navigate('Home')
+    } else {
+      <Text>Json.message</Text>
+    }
+  }
  
   return (
     <View style={styles.container}>
@@ -151,8 +182,25 @@ export default function login({ navigation }) {
           fontSize: 17
         }}
         title = {'LOGIN'}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => checkLogin(email, password) /*navigation.navigate('Home')*/}
         />
+
+      <Button
+        buttonStyle = {{
+          backgroundColor: '#94F385',
+          borderRadius: 25,
+          marginVertical: 10,
+          minHeight: 75,
+          width: 300, 
+          
+        }}
+        textStyle = {{
+          textAlign: 'center',
+          fontSize: 17
+        }}
+        title = {'SIGN UP'}
+        onPress={() => navigation.navigate('SignUp')}
+      />
     </View>
   );
 }

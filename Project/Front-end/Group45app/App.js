@@ -26,6 +26,7 @@ function App() {
         <Stack.Screen name="Sign Up" component={signup}/>
         <Stack.Screen name="Login" component={login}/>
         <Stack.Screen name="Home" component={HomeScreen}/>
+        <Stack.Screen name="SignUp" component={signup} />
         <Stack.Screen name="Journal" component={JouranlScreen}/>
         <Stack.Screen name="JournalGenerate" component={GeneratePrompt}/>
         <Stack.Screen name="JournalInput" component={InputPage} />
