@@ -11,8 +11,10 @@ running the app:
 FRONT END
 install dependencies:
 - npm install -g expo-cli
-- 
-
+- npm install @react-navigation/native
+- npm install react-native-screens react-native-safe-area-context
+- npm install @react-navigation/native-stack
+- npm install react-native-elements
 
 BACK END
 install dependencies: 
